@@ -68,7 +68,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a && rm -rf /package/feeds/small/miniupnpd-iptables /package/feeds/luci/{luci-app-openclash,luci-app-passwall,luci-app-passwall2,luci-app-dockerman,luci-app-smartdns,luci-app-upnp} /package/feeds/packages/smartdns
 
     - name: Install feeds
-      run: cd openwrt && cd /package/feeds/small && ln -s /feeds/small/{luci-app-passwall,luci-app-passwall2,luci-app-openclash,luci-app-dockerman,luci-app-smartdns,smartdns} .  && cd ~/openwrt && ./scripts/feeds install -a
+      run: cd openwrt && ./scripts/feeds install -a && cd /package/feeds/small && ln -s /feeds/small/{luci-app-passwall,luci-app-passwall2,luci-app-openclash,luci-app-dockerman,luci-app-smartdns,smartdns} .  && cd ~/openwrt
 
     - name: Load custom configuration
       run: |
