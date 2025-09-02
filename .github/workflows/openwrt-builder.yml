@@ -72,7 +72,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a && rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb} && rm ./package/feeds/luci/luci-app-openclash && rm ./package/feeds/luci/luci-app-passwall && rm ./package/feeds/luci/luci-app-smartdns && ln -s ./feeds/small/shadowsocks-rust/ ./package/feeds/small && ln -s ./feeds/small/luci-app-openclash/ ./package/feeds/small && ln -s ./feeds/small/luci-app-passwall/ ./package/feeds/small && ln -s ./feeds/small/luci-app-smartdns/ ./package/feeds/small && rm ./package/feeds/packages/haproxy && ln -s ./feeds/small/haproxy/ ./package/feeds/small
+      run: cd openwrt && ./scripts/feeds install -a && rm -rf feeds/small/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb} && rm ./package/feeds/luci/luci-app-openclash && rm ./package/feeds/luci/luci-app-passwall && rm ./package/feeds/luci/luci-app-smartdns && ln -s ./feeds/small/shadowsocks-rust/ ./package/feeds/small && ln -s ./feeds/small/luci-app-openclash/ ./package/feeds/small && ln -s ./feeds/small/luci-app-passwall/ ./package/feeds/small && ln -s ./feeds/small/luci-app-smartdns/ ./package/feeds/small && rm ./package/feeds/packages/haproxy && ln -s ./feeds/small/haproxy/ ./package/feeds/small
 
     - name: Load custom configuration
       run: |
